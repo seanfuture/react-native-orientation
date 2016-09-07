@@ -46,6 +46,9 @@ module.exports = {
   unlockAllOrientations() {
     Orientation.unlockAllOrientations();
   },
+  unlockAllOrientationsIncludingUpsideDown() {
+    Orientation.unlockAllOrientationsIncludingUpsideDown();
+  },
   addOrientationListener(cb) {
     var key = getKey(cb);
     listeners[key] = DeviceEventEmitter.addListener(orientationDidChangeEvent,

@@ -165,12 +165,18 @@ RCT_EXPORT_METHOD(lockToLandscapeLeft)
 
 RCT_EXPORT_METHOD(unlockAllOrientations)
 {
-  #if DEBUG
+#if DEBUG
     NSLog(@"Unlock All Orientations");
-  #endif
-  [Orientation setOrientation:UIInterfaceOrientationMaskAllButUpsideDown];
-//  AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//  delegate.orientation = 3;
+#endif
+    [Orientation setOrientation:UIInterfaceOrientationMaskAllButUpsideDown];
+}
+
+RCT_EXPORT_METHOD(unlockAllOrientationsIncludingUpsideDown)
+{
+#if DEBUG
+    NSLog(@"Unlock All Orientations Including Upside Down");
+#endif
+    [Orientation setOrientation:UIInterfaceOrientationMaskAll];
 }
 
 - (NSDictionary *)constantsToExport
